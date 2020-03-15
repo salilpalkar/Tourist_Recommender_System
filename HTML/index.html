@@ -5,20 +5,34 @@
     <title>
         Tourist Recommendation
     </title>
+
     <link rel="stylesheet" href="../CSS/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body onload="setUpPage()">
     <div id="root">
         <h1>
             INPUT DETAILS
         </h1>
         <form id="contactForm" name="contactForm" method="post" action="../PHP/mysql_connect.php">
-            Season: <input type="text" name="season" />
+            <table>
+                <tr>
+                    <th>Season</th>
+                    <th>City</th>
+                    <th>State</th>
+                </tr>
+                <tr>
+                    <td><select id="season-dropdown" name="season[]" size=3 multiple></select></td>
+                    <td><select id="city-dropdown" name="city[]" size=3 multiple></select></td>
+                    <td><select id="state-dropdown" name="state[]" size=3 multiple></select></td>
+                </tr>
+            </table>
+            <br />
             <input type="submit">
         </form>
     </div>
+    <script src="../JS/script.js"> </script>
 </body>
 
 </html>

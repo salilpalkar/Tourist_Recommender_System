@@ -36,26 +36,78 @@ $username = "root";
 $password = "";
 $db_name = "DBMSP2";
 
-// @mysqli_connect("$db_host", "$db_username", "$db_pass") or die ("ERROR: Could not connect to MySQL");
-// @mysqli_select_db("$db_name") or die ("ERROR: Database connection failed");
-
+//establish connection to database
 $conn = new mysqli($servername, $username, $password, $db_name);
 
 if($conn -> connect_error){
     die("Connection failed: " . $conn->connect_error);
 }
 
-// echo "Connection established";
-// echo $_POST["season"];
-$season = $_POST["season"];
-$query = "SELECT * FROM VENUE_DETAILS WHERE SEASON = '$season' OR SEASON = 'ALL'";
+if(isset($_POST["season"])){
+    $seasons = $_POST["season"];
+    $seasons_string  = "";
+    foreach($seasons as $temp){
+        $seasons_string = "'".$temp."',".$seasons_string;
+    }
+    $seasons_string = strtolower(rtrim($seasons_string, ","));
+}
 
+if(isset($_POST["city"])){
+    $cities = $_POST["city"];
+    $cities_string  = "";
+    if(isset($cities)){
+        foreach($cities as $temp){
+            $cities_string = "'".$temp."',".$cities_string;
+        }
+        $cities_string = strtolower(rtrim($cities_string, ","));
+    }
+}
+
+if(isset($_POST["state"])){
+    $states = $_POST["state"];
+    $states_string  = "";
+    if(isset($states)){
+        foreach($states as $temp){
+            $states_string = "'".$temp."',".$states_string;
+        }
+        $states_string = strtolower(rtrim($states_string, ","));
+    }
+}
+$query = "SELECT V.VENUE, V.CITY, V.SEASON, C.STATE FROM 
+            VENUE_DETAILS V
+            JOIN
+            CITY_DETAILS C
+            ON V.CITY = C.CITY";
+
+$flag = 0;
+if(isset($_POST["season"]) && strpos($seasons_string, "all") == false){
+    $query = $query." WHERE SEASON IN ($seasons_string)";
+    $flag = 1;
+}
+if(isset($_POST["state"]) && strpos($states_string, "all") == false){
+    if($flag == 0){
+        $query = $query." WHERE C.STATE IN ($states_string)";
+        $flag = 1;
+    }
+    else{
+        $query = $query." AND C.STATE IN ($states_string)";
+    }
+}
+if(isset($_POST["city"]) && strpos($cities_string, "all") == false){
+    if($flag == 0){
+        $query = $query." WHERE V.CITY IN ($cities_string)";
+        $flag = 1;
+    }
+    else{
+        $query = $query." AND V.CITY IN ($cities_string)";
+    }
+}
 $result = $conn->query($query);
 
-echo "<table><tr><th>VENUE</th><th>CITY</th><th>SEASON</th></tr>";
+echo "<table><tr><th>VENUE</th><th>CITY</th><th>SEASON</th><th>STATE</th></tr>";
 if($result->num_rows > 0){
     while($row = $result->fetch_assoc()){
-        echo "<tr><td>" . $row["VENUE"]. " </td><td>" . $row["CITY"]. "</td><td>" . $row["SEASON"]. "</td></tr>";
+        echo "<tr><td>" . $row["VENUE"]. " </td><td>" . $row["CITY"]. "</td><td>" . $row["SEASON"]. "</td><td>". $row["STATE"]. "</td></tr>";
     }
 }
 else{
