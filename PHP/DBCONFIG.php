@@ -11,14 +11,14 @@ if ($conn->connect_error) {
 } 
 $sql="DROP DATABASE DBMSP2";
 if ($conn->query($sql) === TRUE) {
-    echo "Database dropped successfully with the name newDB<br>";
+    echo "Database dropped successfully with the name DBMSP2<br>";
 } else {
     echo "Error dropping database: " . $conn->error."<br>";
 }
 //Creating a database named newDB
 $sql = "CREATE DATABASE DBMSP2";
 if ($conn->query($sql) === TRUE) {
-    echo "Database CREATED successfully with the name newDB<br>";
+    echo "Database CREATED successfully with the name DBMSP2<br>";
 } else {
     echo "Error creating database: " . $conn->error."<br>";
 }
