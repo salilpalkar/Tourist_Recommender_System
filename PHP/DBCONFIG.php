@@ -15,7 +15,7 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error dropping database: " . $conn->error."<br>";
 }
-//Creating a database named newDB
+//Creating a database named DBMSP2
 $sql = "CREATE DATABASE DBMSP2";
 if ($conn->query($sql) === TRUE) {
     echo "Database CREATED successfully with the name DBMSP2<br>";
@@ -31,7 +31,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error)."<br>";
 } 
 else{
-    echo "Connected to newDB<br>";
+    echo "Connected to DBMSP2<br>";
 }
 $sql="CREATE TABLE `VENUE_DETAILS` (
     `VENUE` VARCHAR(20) NOT NULL ,
@@ -48,7 +48,10 @@ else{
 $sql="CREATE TABLE `CITY_DETAILS` (
      `CITY` VARCHAR(20) NOT NULL ,
      `STATE` VARCHAR(20) NOT NULL,
-       PRIMARY KEY(`CITY`) )ENGINE = InnoDB;";
+     `SECURITY` VARCHAR(20) NOT NULL,
+     `RATING` INT NOT NULL,
+     `CUISINE` VARCHAR(20) NOT NULL,
+      PRIMARY KEY(`CITY`) )ENGINE = InnoDB;";
 if($conn->query($sql)===TRUE){
     echo "succesful creation of CITY_DETAILS<br>";
 }
