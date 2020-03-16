@@ -6,6 +6,7 @@
             @import url("https://fonts.googleapis.com/css?family=Montserrat:500&display=swap");
             body{
                 text-align:center;
+                font-family: "Montserrat", sans-serif;
             }
             table{
                 width: 50%;
@@ -16,7 +17,6 @@
                 margin-right:auto;
             }
             table, th, td{
-                font-family: "Montserrat", sans-serif;
                 border: 1px solid black;
                 padding: 10px;
             }
@@ -31,7 +31,7 @@
 
 <?php 
 
-$servername = "localhost:3308";
+$servername = "localhost";
 $username = "root";
 $password = "";
 $db_name = "DBMSP2";
@@ -73,9 +73,11 @@ if(isset($_POST["state"])){
         $states_string = strtolower(rtrim($states_string, ","));
     }
 }
+
 if(isset($_POST["hotel-price"])){
-     echo "hotel price = ".$_POST["hotel-price"];
+    echo "hotel price = " . $_POST["hotel-price"];
 }
+
 $query = "SELECT V.VENUE, V.CITY, V.SEASON, C.STATE FROM 
             VENUE_DETAILS V
             JOIN
@@ -116,4 +118,6 @@ if($result->num_rows > 0){
 else{
     echo "No rows fetched";
 }
+
+
 ?>
