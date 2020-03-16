@@ -66,6 +66,35 @@ if($conn->query($sql)===TRUE){
     else{
         echo "VENUE_DETAILS foreign key not added".$conn->error."<br>";
     }
+
+$sql="CREATE TABLE `HOTEL_DETAILS` (
+     `HOTEL_ID` VARCHAR(4) NOT NULL,
+     `HOTEL_NAME` VARCHAR(20) NOT NULL,
+     `CITY` VARCHAR(10) NOT NULL,
+     `RATING` INT NOT NULL,
+     `COST_PER_DAY` INT NOT NULL,
+      PRIMARY KEY(`HOTEL_ID`),
+      FOREIGN KEY(`CITY`) REFERENCES `CITY_DETAILS`(`CITY`) )ENGINE = InnoDB;";
+if($conn->query($sql)===TRUE){
+    echo "succesful creation of HOTEL_DETAILS<br>";
+}
+else{
+    echo "Error creating HOTEL_DETAILS".$conn->error."<br>";
+}
+
+$sql="CREATE TABLE `ACTIVITY_DETAILS` (
+    `VENUE` VARCHAR(20) NOT NULL,
+    `ACTIVITY` VARCHAR(20) NOT NULL,
+    `RATING` INT NOT NULL,
+    `PRICE` INT NOT NULL,
+     PRIMARY KEY(`VENUE`,`ACTIVITY`),
+     FOREIGN KEY(`VENUE`) REFERENCES `VENUE_DETAILS`(`VENUE`) )ENGINE = InnoDB;";
+if($conn->query($sql)===TRUE){
+   echo "succesSful creation of ACTIVITY_DETAILS<br>";
+}
+else{
+   echo "Error creating ACTIVITY_DETAILS".$conn->error."<br>";
+}
 // closing connection
 $conn->close();
 ?>
