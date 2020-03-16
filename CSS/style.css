@@ -1,5 +1,107 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:500&display=swap");
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
+}
+
+#pageHeading {
+  padding: 10px;
+}
+
+.select-options {
+  width: 100%;
+  height: 250px;
+  text-align: center;
+  font-weight: bolder;
+  /* border: 1px solid black; */
+}
+
+.dropdown {
+  margin-left: 20px;
+  margin-top: 70px;
+}
+
+input[type="submit"] {
+  background-color: #0f52ba;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+input[type="range"] {
+  margin-top: 120px;
+  appearance: none;
+}
+
+.submitWrapper {
+  text-align: center;
+}
+
+#select-season {
+  background-color: #73c2fb;
+  /* background-image: url("../IMAGES/img_mountains_wide.jpg"); */
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2)
+    ),
+    url("../IMAGES/img_mountains_wide.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#select-city {
+  background-color: #7ef9ff;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2)
+    ),
+    url("../IMAGES/ghats-at-varanasi-uttar-pradesh.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#select-state {
+  background-color: #b0dfe5;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2)
+    ),
+    url("../IMAGES/old-goa-1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#select-hotel-price-range {
+  background-color: #b0dfe5;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2)
+    ),
+    url("../IMAGES/hotel-1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+select {
+  border: 1px solid #777;
+  padding: 3px;
+  border-radius: 3px;
+  background-color: #e8e8e8;
+  appearance: none;
 }

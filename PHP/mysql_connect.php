@@ -73,6 +73,9 @@ if(isset($_POST["state"])){
         $states_string = strtolower(rtrim($states_string, ","));
     }
 }
+if(isset($_POST["hotel-price"])){
+     echo "hotel price = ".$_POST["hotel-price"];
+}
 $query = "SELECT V.VENUE, V.CITY, V.SEASON, C.STATE FROM 
             VENUE_DETAILS V
             JOIN

@@ -12,27 +12,33 @@
 
 <body onload="setUpPage()">
     <div id="root">
-        <h1>
-            INPUT DETAILS
+        <h1 id="pageHeading">
+            Tourist Recommendation System
         </h1>
         <form id="contactForm" name="contactForm" method="post" action="../PHP/mysql_connect.php">
-            <table>
-                <tr>
-                    <th>Season</th>
-                    <th>City</th>
-                    <th>State</th>
-                </tr>
-                <tr>
-                    <td><select id="season-dropdown" name="season[]" size=3 multiple></select></td>
-                    <td><select id="city-dropdown" name="city[]" size=3 multiple></select></td>
-                    <td><select id="state-dropdown" name="state[]" size=3 multiple></select></td>
-                </tr>
-            </table>
+
+            <div class="select-options" id="select-season">
+                <!-- <img src="../IMAGES/img_mountains_wide.jpg" style="width:100%"> -->
+                Any seasonal preferences ?
+                <select id="season-dropdown" class="dropdown" name="season[]" size=3 multiple></select>
+            </div>
+            <!-- <div class="select-options" id="select-city">
+                city selections ?
+                <select id="city-dropdown" class="dropdown name=" city[]" size=3 multiple></select>
+            </div> -->
+            <div class="select-options" id="select-state">
+                Which state do you want to visit ?
+                <select id="state-dropdown" class="dropdown" name="state[]" size=3 multiple></select>
+            </div>
+            <div class="select-options" id="select-hotel-price-range">
+                Set max hotel price per night (&#8377;500 to &#8377;10,000)
+                <input type="range" name="hotel-price" min="500" max="10000">
+            </div>
             <br />
-            <input type="submit">
+            <div class="submitWrapper"><input type="submit"></div>
         </form>
     </div>
-    <script src="../JS/script.js"> </script>
+    <script src="../JS/script.js"></script>
 </body>
 
 </html>

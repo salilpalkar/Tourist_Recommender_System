@@ -1,18 +1,74 @@
-let cityArray = ["Nagpur", "Mumbai", "Jaipur", "Mahabaleshwar"];
-let stateArray = ["Maharashtra", "Rajasthan"];
+let cityArray = [
+  "Nagpur",
+  "Mumbai",
+  "Jaipur",
+  "Mahabaleshwar",
+  "Agra",
+  "Kolkata",
+  "Chennai",
+  "Varanasi",
+  "Rishikesh",
+  "Shillong",
+  "Raipur",
+  "Panaji",
+  "Ranchi",
+  "Ahmedabad",
+  "Imphal",
+  "Tirupati",
+  "Bhopal",
+  "Thiruvananthapuram",
+  "Pune",
+  "Surat",
+  "Vadodara",
+  "Dehradun",
+  "Kanpur",
+  "Darjeeling",
+  "Agartala",
+  "Shimla",
+  "Gangtok",
+  "Jaisalmer"
+];
+let stateArray = [
+  "Maharashtra",
+  "Rajasthan",
+  "Uttar Pradesh",
+  "West Bengal",
+  "Tamil Nadu",
+  "Uttarakhand",
+  "Meghalaya",
+  "Chhatisgarh",
+  "Goa",
+  "Jharkhand",
+  "Gujarat",
+  "Manipur",
+  "Andhra Pradesh",
+  "Madhya Pradesh",
+  "Kerala",
+  "Tripura",
+  "Himachal Pradesh",
+  "Sikkim",
+  "Punjab",
+  "Odisha",
+  "Meghalaya",
+  "Assam",
+  "Bihar",
+  "Jammu and Kashmir",
+  "Karnataka",
+  "Arunachal Pradesh"
+];
 let seasonArray = ["Summer", "Winter"];
 
-const cityDropdown = document.getElementById("city-dropdown");
+// const cityDropdown = document.getElementById("city-dropdown");
 const stateDropdown = document.getElementById("state-dropdown");
 const seasonDropdown = document.getElementById("season-dropdown");
 
 const setUpPage = () => {
-  cityArray.sort();
-  let cityOptions = cityArray.map(
-    city => `<option value=${city}>${city}</option>`
-  );
-  cityOptions = `<option value=${"all"}>All</option>` + cityOptions.join("");
-  cityDropdown.innerHTML = cityOptions;
+  // cityArray.sort();
+  // let cityOptions = cityArray.map(
+  //   city => `<option value=${city}>${city}</option>`
+  // );
+  // cityOptions = `<option value=${"all"}>All</option>` + cityOptions.join("");
+  // cityDropdown.innerHTML = cityOptions;
 
   stateArray.sort();
   let stateOptions = stateArray.map(
