@@ -53,8 +53,8 @@ input[type="range"] {
   background-color: #73c2fb;
   /* background-image: url("../IMAGES/img_mountains_wide.jpg"); */
   background-image: linear-gradient(
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0.2)
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1)
     ),
     url("../IMAGES/img_mountains_wide.jpg");
   background-position: center;
@@ -65,8 +65,8 @@ input[type="range"] {
 #select-city {
   background-color: #7ef9ff;
   background-image: linear-gradient(
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0.2)
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1)
     ),
     url("../IMAGES/ghats-at-varanasi-uttar-pradesh.jpg");
   background-position: center;
@@ -77,10 +77,35 @@ input[type="range"] {
 #select-state {
   background-color: #b0dfe5;
   background-image: linear-gradient(
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0.2)
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1)
     ),
     url("../IMAGES/old-goa-1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#select-activity {
+  color: white;
+  background-color: #b0dfe5;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1)
+    ),
+    url("../IMAGES/camping-1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#select-cuisine {
+  background-color: #b0dfe5;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1)
+    ),
+    url("../IMAGES/food-4.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -89,10 +114,10 @@ input[type="range"] {
 #select-hotel-price-range {
   background-color: #b0dfe5;
   background-image: linear-gradient(
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0.2)
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.3)
     ),
-    url("../IMAGES/hotel-1.jpg");
+    url("../IMAGES/sara-dubler-Koei_7yYtIo-unsplash.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

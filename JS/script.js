@@ -57,10 +57,73 @@ let stateArray = [
   "Arunachal Pradesh"
 ];
 let seasonArray = ["Summer", "Winter"];
+let activityArray = [
+  "Sightseeing",
+  "Boating",
+  "Surfing",
+  "Trekking",
+  "Safari",
+  "Scuba Diving",
+  "Camping"
+];
+let cuisineArray = [
+  "Saoji Pohe",
+  "Vada Pav",
+  "Dal Bati Churma",
+  "Petha",
+  "Pedha",
+  "Sandesh",
+  "Uttapum",
+  "Malpua",
+  "Singori",
+  "Chow Mein",
+  "Mahuwa and Bafauri",
+  "Goan Fish Curry",
+  "Baigan Ghop & Thekua",
+  "Thepla",
+  "Soibum Eromba",
+  "Pesarattu",
+  "Poha Jalebi",
+  "Sadya",
+  "Puran Poli",
+  "Dhokla",
+  "Phafda",
+  "Phaanu",
+  "Revari",
+  "Mishti Doi",
+  "Mui Borok",
+  "Madra",
+  "Momos",
+  "Mohan Thaal",
+  "Seekh Kebabs",
+  "Chole Bhature",
+  "Shrikhand",
+  "Chenna Poda",
+  "Baigan Ki Longe",
+  "Rasam",
+  "Mawa Kachori",
+  "Jadoh wiith Rice",
+  "Sev",
+  "Makki di Roti",
+  "Gatte",
+  "Litti Choka",
+  "Masoor Tenga",
+  "Basundi",
+  "Idiyappam",
+  "Rogan Josh",
+  "Bedhai",
+  "Mawa Bati",
+  "Pandhara Rassa",
+  "Pulihora",
+  "Bisibele Bath",
+  "Apong"
+];
 
 // const cityDropdown = document.getElementById("city-dropdown");
 const stateDropdown = document.getElementById("state-dropdown");
 const seasonDropdown = document.getElementById("season-dropdown");
+const cuisineDropdown = document.getElementById("cuisine-dropdown");
+const activityDropdown = document.getElementById("activity-dropdown");
 
 const setUpPage = () => {
   // cityArray.sort();
@@ -84,4 +147,20 @@ const setUpPage = () => {
   seasonOptions =
     `<option value=${"all"}>All</option>` + seasonOptions.join("");
   seasonDropdown.innerHTML = seasonOptions;
+
+  cuisineArray.sort();
+  let cuisineOptions = cuisineArray.map(
+    cuisine => `<option value=${cuisine}>${cuisine}</option>`
+  );
+  cuisineOptions =
+    `<option value=${"all"}>All</option>` + cuisineOptions.join("");
+  cuisineDropdown.innerHTML = cuisineOptions;
+
+  activityArray.sort();
+  let activityOptions = activityArray.map(
+    activity => `<option value=${activity}>${activity}</option>`
+  );
+  activityOptions =
+    `<option value=${"all"}>All</option>` + activityOptions.join("");
+  activityDropdown.innerHTML = activityOptions;
 };
