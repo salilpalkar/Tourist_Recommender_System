@@ -1,5 +1,5 @@
 <?php
-$servername = "localhost";
+$servername = "localhost:3308";
 $username = "root";
 $password = "";
 
@@ -72,8 +72,8 @@ if($conn->query($sql)===TRUE){
 
 $sql="CREATE TABLE `HOTEL_DETAILS` (
      `HOTEL_ID` VARCHAR(4) NOT NULL,
-     `HOTEL_NAME` VARCHAR(20) NOT NULL,
-     `CITY` VARCHAR(10) NOT NULL,
+     `HOTEL_NAME` VARCHAR(50) NOT NULL,
+     `CITY` VARCHAR(20) NOT NULL,
      `COST_PER_DAY` INT NOT NULL,
       PRIMARY KEY(`HOTEL_ID`),
       FOREIGN KEY(`CITY`) REFERENCES `CITY_DETAILS`(`CITY`) )ENGINE = InnoDB;";

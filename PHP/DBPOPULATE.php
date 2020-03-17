@@ -1,5 +1,5 @@
 <?php
-$servername = "localhost";
+$servername = "localhost:3308";
 $username = "root";
 $password = "";
 
@@ -89,7 +89,7 @@ $f_pointer4=fopen("../CSV/ACTIVITY_DETAILS_POPULATE.csv","r"); // file pointer
 
 while(! feof($f_pointer4)){
 $ar4=fgetcsv($f_pointer4);
-$sql4="INSERT INTO `ACTIVITY_DETAILS`(`VENUE`,`ACTIVITY`,`RATING`,`PRICE`)values('$ar4[0]','$ar4[1]',$ar4[2],$ar4[3]";
+$sql4="INSERT INTO `ACTIVITY_DETAILS`(`VENUE`,`ACTIVITY`,`RATING`,`PRICE`)values('$ar4[0]','$ar4[1]',$ar4[2],$ar4[3])";
 if($conn->query($sql4)===TRUE){
     echo $sql4;
 }
