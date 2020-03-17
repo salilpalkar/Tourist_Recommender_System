@@ -68,9 +68,24 @@ $f_pointer3=fopen("../CSV/HOTEL_DETAILS_POPULATE.csv","r"); // file pointer
 
 while(! feof($f_pointer3)){
 $ar3=fgetcsv($f_pointer3);
-$sql3="INSERT INTO `HOTEL_DETAILS`(`HOTEL_ID`,`HOTEL_NAME`,`CITY`,`RATING`,`COST_PER_DAY`,)values('$ar2[0]','$ar2[1]','$ar2[2]',$ar2[3],$ar2[4])";
+$sql3="INSERT INTO `HOTEL_DETAILS`(`HOTEL_ID`,`HOTEL_NAME`,`CITY`,`RATING`,`COST_PER_DAY`,)values('$ar3[0]','$ar3[1]','$ar3[2]',$ar3[3],$ar3[4])";
 if($conn->query($sql3)===TRUE){
     echo $sql3;
+}
+else{
+    echo "Error in inserting.<br>".$conn->error;
+}
+echo "<br>";
+}
+echo "Table HOTEL_DETAILS populated<br>";
+
+$f_pointer4=fopen("../CSV/ACTIVITY_DETAILS_POPULATE.csv","r"); // file pointer
+
+while(! feof($f_pointer4)){
+$ar4=fgetcsv($f_pointer4);
+$sql4="INSERT INTO `HOTEL_DETAILS`(`VENUE`,`ACTIVITY`,`RATING`,`PRICE`,)values('$ar4[0]','$ar4[1]',$ar4[2],$ar2[3]";
+if($conn->query($sql4)===TRUE){
+    echo $sql4;
 }
 else{
     echo "Error in inserting.<br>".$conn->error;
