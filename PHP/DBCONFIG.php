@@ -1,5 +1,5 @@
 <?php
-$servername = "localhost:3308";
+$servername = "localhost";
 $username = "root";
 $password = "";
 
@@ -74,7 +74,6 @@ $sql="CREATE TABLE `HOTEL_DETAILS` (
      `HOTEL_ID` VARCHAR(4) NOT NULL,
      `HOTEL_NAME` VARCHAR(20) NOT NULL,
      `CITY` VARCHAR(10) NOT NULL,
-     `RATING` INT NOT NULL,
      `COST_PER_DAY` INT NOT NULL,
       PRIMARY KEY(`HOTEL_ID`),
       FOREIGN KEY(`CITY`) REFERENCES `CITY_DETAILS`(`CITY`) )ENGINE = InnoDB;";
@@ -87,7 +86,7 @@ else{
 
 $sql="CREATE TABLE `ACTIVITY_DETAILS` (
     `VENUE` VARCHAR(20) NOT NULL,
-    `ACTIVITY` VARCHAR(20) DEFAULT `SIGHTSEEING`,
+    `ACTIVITY` VARCHAR(20) NOT NULL,
     `RATING` INT NOT NULL,
     `PRICE` INT NOT NULL,
      PRIMARY KEY(`VENUE`,`ACTIVITY`),
@@ -98,6 +97,16 @@ if($conn->query($sql)===TRUE){
 else{
    echo "Error creating ACTIVITY_DETAILS".$conn->error."<br>";
 }
+
+// $sql="ALTER TABLE `ACTIVITY_DETAILS`
+//         ALTER ACTIVITY SET DEFAULT `SIGHTSEEING`;";
+// if($conn->query($sql)===TRUE){
+//         echo "ACTIVITY_DETAILS default value added<br>";
+//     }
+//     else{
+//         echo "ACTIVITY_DETAILS default value not added".$conn->error."<br>";
+//     }
+
 // closing connection
 $conn->close();
 ?>

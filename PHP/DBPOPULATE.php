@@ -1,5 +1,5 @@
 <?php
-$servername = "localhost:3308";
+$servername = "localhost";
 $username = "root";
 $password = "";
 
@@ -28,6 +28,12 @@ else{
 }
 if($conn->query("DELETE FROM `HOTEL_DETAILS`")){
     echo "Table HOTEL_DETAILS is empty.<br>";
+}
+else{
+    echo "error deleting.".$conn->error;
+}
+if($conn->query("DELETE FROM `ACTIVITY_DETAILS`")){
+    echo "Table ACTIVITY_DETAILS is empty.<br>";
 }
 else{
     echo "error deleting.".$conn->error;
@@ -68,7 +74,7 @@ $f_pointer3=fopen("../CSV/HOTEL_DETAILS_POPULATE.csv","r"); // file pointer
 
 while(! feof($f_pointer3)){
 $ar3=fgetcsv($f_pointer3);
-$sql3="INSERT INTO `HOTEL_DETAILS`(`HOTEL_ID`,`HOTEL_NAME`,`CITY`,`RATING`,`COST_PER_DAY`,)values('$ar3[0]','$ar3[1]','$ar3[2]',$ar3[3],$ar3[4])";
+$sql3="INSERT INTO `HOTEL_DETAILS`(`HOTEL_ID`,`HOTEL_NAME`,`CITY`, `COST_PER_DAY`)values('$ar3[0]','$ar3[1]','$ar3[2]',$ar3[3])";
 if($conn->query($sql3)===TRUE){
     echo $sql3;
 }
@@ -83,7 +89,7 @@ $f_pointer4=fopen("../CSV/ACTIVITY_DETAILS_POPULATE.csv","r"); // file pointer
 
 while(! feof($f_pointer4)){
 $ar4=fgetcsv($f_pointer4);
-$sql4="INSERT INTO `HOTEL_DETAILS`(`VENUE`,`ACTIVITY`,`RATING`,`PRICE`,)values('$ar4[0]','$ar4[1]',$ar4[2],$ar2[3]";
+$sql4="INSERT INTO `ACTIVITY_DETAILS`(`VENUE`,`ACTIVITY`,`RATING`,`PRICE`)values('$ar4[0]','$ar4[1]',$ar4[2],$ar4[3]";
 if($conn->query($sql4)===TRUE){
     echo $sql4;
 }
@@ -92,7 +98,7 @@ else{
 }
 echo "<br>";
 }
-echo "Table HOTEL_DETAILS populated<br>";
+echo "Table ACTIVIITY_DETAILS populated<br>";
 
 // closing connection
 $conn->close();
