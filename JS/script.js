@@ -128,21 +128,21 @@ const activityDropdown = document.getElementById("activity-dropdown");
 const setUpPage = () => {
   // cityArray.sort();
   // let cityOptions = cityArray.map(
-  //   city => `<option value=${city}>${city}</option>`
+  //   city => `<option value="${city}"">${city}</option>`
   // );
   // cityOptions = `<option value=${"all"}>All</option>` + cityOptions.join("");
   // cityDropdown.innerHTML = cityOptions;
 
   stateArray.sort();
   let stateOptions = stateArray.map(
-    state => `<option value=${state}>${state}</option>`
+    state => `<option value="${state}">${state}</option>`
   );
   stateOptions = `<option value=${"all"}>All</option>` + stateOptions.join("");
   stateDropdown.innerHTML = stateOptions;
 
   seasonArray.sort();
   let seasonOptions = seasonArray.map(
-    season => `<option value=${season}>${season}</option>`
+    season => `<option value="${season}">${season}</option>`
   );
   seasonOptions =
     `<option value=${"all"}>All</option>` + seasonOptions.join("");
@@ -150,7 +150,7 @@ const setUpPage = () => {
 
   cuisineArray.sort();
   let cuisineOptions = cuisineArray.map(
-    cuisine => `<option value=${cuisine}>${cuisine}</option>`
+    cuisine => `<option value="${cuisine}">${cuisine}</option>`
   );
   cuisineOptions =
     `<option value=${"all"}>All</option>` + cuisineOptions.join("");
@@ -158,9 +158,12 @@ const setUpPage = () => {
 
   activityArray.sort();
   let activityOptions = activityArray.map(
-    activity => `<option value=${activity}>${activity}</option>`
+    activity => `<option value="${activity}">${activity}</option>`
   );
   activityOptions =
     `<option value=${"all"}>All</option>` + activityOptions.join("");
   activityDropdown.innerHTML = activityOptions;
+
+  // console.log(cuisineOptions);
+  // console.log(cuisineDropdown.innerHTML);
 };
