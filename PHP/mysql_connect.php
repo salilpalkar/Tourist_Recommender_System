@@ -33,7 +33,7 @@
 
 
 $servername = "localhost:3308";
-//$servername = "localhost";
+// $servername = "localhost";
 $username = "root";
 $password = "";
 $db_name = "DBMSP2";
@@ -65,14 +65,15 @@ if(isset($_POST["state"])){
     }
 }
 
-if(isset($_POST["food"])){
-    $foods = $_POST["food"];
+if(isset($_POST["cuisine"])){
+    $foods = $_POST["cuisine"];
     $foods_string  = "";
     if(isset($foods)){
         foreach($foods as $temp){
             $foods_string = "'".$temp."',".$foods_string;
         }
         $foods_string = strtoupper(rtrim($foods_string, ","));
+        echo "$foods_string";
     }
 }
 
@@ -117,7 +118,7 @@ if(isset($_POST["state"]) && strpos($states_string, "all") == false){
         $query = $query." AND C.STATE IN ($states_string)";
     }
 }
-if(isset($_POST["food"]) && strpos($foods_string, "all") == false){
+if(isset($_POST["cuisine"]) && strpos($foods_string, "all") == false){
     if($flag == 0){
         $query = $query." WHERE C.CUISINE IN ($foods_string)";
         $flag = 1;

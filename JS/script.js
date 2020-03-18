@@ -79,7 +79,7 @@ let cuisineArray = [
   "Chow Mein",
   "Mahuwa and Bafauri",
   "Goan Fish Curry",
-  "Baigan Ghop & Thekua",
+  "Baigan Chop & Thekua",
   "Thepla",
   "Soibum Eromba",
   "Pesarattu",
