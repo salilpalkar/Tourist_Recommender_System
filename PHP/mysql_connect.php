@@ -27,6 +27,9 @@
             }
         </style>
     </head>
+    <body>
+            <h1>Recommended Places</h1>
+    </body>
 </html>
 
 <?php 
@@ -167,14 +170,8 @@ elseif(isset($_POST["custom-selection"])){
 
     if(isset($_POST["hotel-price"])){
         $hotels=$_POST["hotel-price"];
-        echo "hotel price = " . $_POST["hotel-price"];
+        // echo "hotel price = " . $_POST["hotel-price"];
     }
-
-    // $query = "SELECT V.VENUE, V.CITY, V.SEASON, C.STATE FROM 
-    //             VENUE_DETAILS V
-    //             JOIN
-    //             CITY_DETAILS C
-    //             ON V.CITY = C.CITY";
 
     $query="SELECT V.VENUE, V.CITY, V.SEASON, C.STATE,C.SECURITY,C.RATING,C.CUISINE,H.HOTEL_ID,H.HOTEL_NAME,H.COST_PER_DAY,A.ACTIVITY,A.RATING,A.PRICE
             FROM 
@@ -201,7 +198,7 @@ elseif(isset($_POST["custom-selection"])){
             $flag = 1;
         }
         else{
-            $query = $query." AND C.CUISINE IN ($foods_string)";
+            $query = $query." OR C.CUISINE IN ($foods_string)";
         }
     }
     if(isset($_POST["activity"]) && strpos($activities_string, "ALL") == false){
@@ -210,7 +207,7 @@ elseif(isset($_POST["custom-selection"])){
             $flag = 1;
         }
         else{
-            $query = $query." AND A.ACTIVITY IN ($activities_string)";
+            $query = $query." OR A.ACTIVITY IN ($activities_string)";
         }
     }
     if(isset($_POST["hotel-price"])){
@@ -224,7 +221,7 @@ elseif(isset($_POST["custom-selection"])){
     }
     $query=$query.";";
     $result = $conn->query($query);
-    echo $query;
+    // echo $query;
     echo "<table><tr><th>VENUE</th><th>CITY</th><th>SEASON</th><th>STATE</th><th>SECURITY</th><th>CITY RATING</th><th>CUISINE</th><th>HOTEL ID</th><th>HOTEL NAME</th><th>COST PER DAY</th><th>ACTIVITY</th><th>ACTIVITY RATING</th><th>ACTIVITY PRICE</th></tr>";
     if($result->num_rows > 0){
         while($row = $result->fetch_assoc()){
