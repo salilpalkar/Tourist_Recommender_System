@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost:3308";
-$servername = "localhost";
+// $servername = "localhost";
 $username = "root";
 $password = "";
 

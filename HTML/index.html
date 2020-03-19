@@ -16,7 +16,38 @@
             Tourist Recommendation System
         </h1>
         <form id="contactForm" name="contactForm" method="post" action="../PHP/mysql_connect.php">
+            <h3 style="padding-left: 10px; margin-top: 20px;">Choose from the below options ---</h3>
+            <div id="preset-container">
+                <div class="presets" id="preset-1">
+                    <h2>Savings Preset</h2>
+                    <p>Most affordable hotels
+                        <input type="submit" name="preset-1-button">
+                    </p>
+                </div>
+                <div class="presets" id="preset-2">
+                    <h2>Food Preset</h2>
+                    <p>Popular food choices
+                        <input type="submit" name="preset-2-button">
+                    </p>
+                </div>
+                <div class="presets" id="preset-3">
+                    <h2>Adventure Preset</h2>
+                    <p>Feeling adventurous ?
+                        <input type="submit" name="preset-3-button">
+                    </p>
+                </div>
+                <div class="presets" id="preset-4">
+                    <h2>Summer Preset</h2>
+                    <p>The vacation plan
+                        <input type="submit" name="preset-4-button">
+                    </p>
+                </div>
+            </div>
 
+            <h3 style="padding-left: 10px; margin-top: 40px;">Or make a custom selection ---</h3>
+            <p style="margin-bottom: 10px; padding-left: 10px;">
+                Hint: Press Ctrl + Click to select multiple items from a dropdown
+            </p>
             <div class="select-options" id="select-season">
                 <!-- <img src="../IMAGES/img_mountains_wide.jpg" style="width:100%"> -->
                 Any seasonal preferences ?
@@ -43,7 +74,7 @@
                 <input type="range" name="hotel-price" min="600" max="10000">
             </div>
             <br />
-            <div class="submitWrapper"><input type="submit"></div>
+            <div class="submitWrapper"><input type="submit" name="custom-selection"></div>
         </form>
     </div>
     <script src="../JS/script.js"></script>

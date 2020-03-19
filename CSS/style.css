@@ -130,3 +130,17 @@ select {
   background-color: #e8e8e8;
   appearance: none;
 }
+
+#preset-container {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.presets {
+  display: inline-block;
+  width: 17%;
+  margin-left: 20px;
+  border: 1px solid black;
+  text-align: left;
+  padding: 10px;
+}
