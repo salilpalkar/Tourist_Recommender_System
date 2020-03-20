@@ -153,7 +153,7 @@ elseif(isset($_POST["custom-selection"])){
                 $foods_string = "'".$temp."',".$foods_string;
             }
             $foods_string = strtoupper(rtrim($foods_string, ","));
-            echo "$foods_string";
+            // echo "$foods_string";
         }
     }
 
@@ -180,7 +180,7 @@ elseif(isset($_POST["custom-selection"])){
 
     $flag = 0;
     if(isset($_POST["season"]) && strpos($seasons_string, "ALL") == false){
-        $query = $query." WHERE SEASON IN ($seasons_string)";
+        $query = $query." WHERE SEASON IN ($seasons_string, 'ALL')";
         $flag = 1;
     }
     if(isset($_POST["state"]) && strpos($states_string, "ALL") == false){
